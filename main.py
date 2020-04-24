@@ -103,6 +103,7 @@ while True:
         # desc = data[x]["weather"]["description"]
         # temp = data[x]["weather"]["temp"]
         # weather_image(main, desc, temp)
+        pass
         
       if event.direction == "down":
         sense.show_message("Bye!")
