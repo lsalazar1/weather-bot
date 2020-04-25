@@ -72,7 +72,7 @@ if __name__ == '__main__':
   sense.set_rotation(270)
 
   name = input('Enter your Name: ')
-  sense.show_message("Hi {}!".format(name))
+  sense.show_message("Hi, {}!".format(name))
 
   sense.set_pixels(face)
   sleep(0.5)
