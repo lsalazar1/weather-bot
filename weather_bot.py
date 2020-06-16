@@ -40,9 +40,9 @@ class WeatherBot:
         @params NONE
         @return NONE
         '''
-        response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={self.city},{self.state},{self.country}&appid={apiKey}')
+        response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={self.city},{self.state},{self.country}&appid={apiKey}&units=imperial')
         print(response.json())
-        
+
     def end_program(self):
         self.sense.show_message('Bye!')
         exit()
