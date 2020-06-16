@@ -12,9 +12,12 @@ class WeatherBot:
         @return NONE
         '''
         self.sense = SenseHat()
-        self.name = input('Enter your name: ')
 
-        self.sense.show_message(f'Hello, {self.name}! :)')
+        self.name = input('Enter your name: ')
+        self.city = input('Enter city (i.e Houston, Kansas City): ')
+        self.state = input('Enter State Code (i.e TX): ')
+        
+        self.sense.show_message(f'Hello, {self.name}!')
         self.sense.set_pixels(face)
         sleep(0.5)
         self.sense.set_pixels(face2)
@@ -23,9 +26,7 @@ class WeatherBot:
 
         self.sense.show_message('Use the joystick ')
         sleep(1)
-        self.sense.show_message('L - Show room temperature')
-        sleep(1)
-        self.sense.show_message('R - Show city weather')
+        self.sense.show_message('L - Show current weather')
         sleep(1)
         self.sense.show_message('D - Exit Program')
         
