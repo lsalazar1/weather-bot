@@ -1,2 +1,5 @@
+from weather_bot import WeatherBot
+
 if __name__ == '__main__':
-  print('testing')
+  bot = WeatherBot()
+  
