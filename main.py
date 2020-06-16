@@ -10,5 +10,4 @@ if __name__ == '__main__':
           if event.direction == 'left':
             bot.show_currentWeather()
   except KeyboardInterrupt:
-    bot.end_program()
-  
+    bot.end_program()  

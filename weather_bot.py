@@ -1,5 +1,6 @@
 from sense_hat import SenseHat
 from time import sleep
+from keys import apiKey
 from images import *
 import requests
 
@@ -16,6 +17,7 @@ class WeatherBot:
         self.name = input('Enter your name: ')
         self.city = input('Enter city (i.e Houston, Kansas City): ')
         self.state = input('Enter State Code (i.e TX): ')
+        self.country = input('Enter Country Code (i.e US, UK): ')
 
         self.sense.show_message(f'Hello, {self.name}!')
         self.sense.set_pixels(face)
@@ -31,8 +33,16 @@ class WeatherBot:
         self.sense.show_message('D - Exit Program')
     
     def show_currentWeather(self):
-        self.sense.show_message('Testing Current weather')
+        '''
+        Shows current weather from user's config variables on
+        weather bot.
 
+        @params NONE
+        @return NONE
+        '''
+        response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={self.city},{self.state},{self.country}&appid={apiKey}')
+        print(response.json())
+        
     def end_program(self):
         self.sense.show_message('Bye!')
         exit()
