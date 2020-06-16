@@ -5,7 +5,7 @@ if __name__ == '__main__':
 
   try:
     while True:
-      for event in bot.sense.get_events():
+      for event in bot.sense.stick.get_events():
         if event.action == 'pressed':
           if event.direction == 'left':
             bot.show_currentWeather()
