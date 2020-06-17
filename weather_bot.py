@@ -69,7 +69,7 @@ class WeatherBot:
                 sleep(0.5)
                 self.sense.set_pixels(clear_skies4)
                 sleep(0.5)
-        elif weather == 'Cloud':
+        elif weather == 'Clouds':
             for x in range(0,4):
                 self.sense.set_pixels(cloud)
                 sleep(0.5)
