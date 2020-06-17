@@ -15,17 +15,9 @@ class WeatherBot:
         '''
         self.sense = SenseHat()
 
-        self.name = input('Enter your name: ')
-        self.city = input('Enter city (i.e Houston, Kansas City): ')
-        self.state = input('Enter State Code (i.e TX): ')
-        self.country = input('Enter Country Code (i.e US, UK): ')
-        self.tempUnit = input('Choose f (fahrenheit) or c (celsius): ').upper()
+        self.change_settings()
 
-        if self.tempUnit == 'F':
-            self.unit = 'imperial'
-        elif self.tempUnit == 'C':
-            self.unit = 'metric'
-
+        # Welcome message
         self.sense.show_message(f'Hello, {self.name}!')
         self.sense.set_pixels(face)
         sleep(0.5)
@@ -33,6 +25,7 @@ class WeatherBot:
         sleep(0.5)
         self.sense.clear()
 
+        # Instructions
         self.sense.show_message('Use the joystick')
         sleep(1)
         self.sense.show_message('L - Show current weather')
@@ -99,7 +92,17 @@ class WeatherBot:
         sleep(1)
     
     def change_settings(self):
-        pass
+        # User settings
+        self.name = input('Enter your name: ')
+        self.city = input('Enter city (i.e Houston, Kansas City): ')
+        self.state = input('Enter State Code (i.e TX): ')
+        self.country = input('Enter Country Code (i.e US, UK): ')
+        self.tempUnit = input('Choose f (fahrenheit) or c (celsius): ').upper()
+
+        if self.tempUnit == 'F':
+            self.unit = 'imperial'
+        elif self.tempUnit == 'C':
+            self.unit = 'metric'
 
     def end_program(self):
         '''
