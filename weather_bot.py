@@ -26,7 +26,7 @@ class WeatherBot:
         sleep(0.5)
         self.sense.clear()
 
-        self.sense.show_message('Use the joystick ')
+        self.sense.show_message('Use the joystick')
         sleep(1)
         self.sense.show_message('L - Show current weather')
         sleep(1)
@@ -40,8 +40,45 @@ class WeatherBot:
         @params NONE
         @return NONE
         '''
-        response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={self.city},{self.state},{self.country}&appid={apiKey}&units=imperial')
-        print(response.json())
+
+        # HTTP GET to OpenWeather, then convert response to json
+        response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={self.city},{self.state},{self.country}&appid={apiKey}&units=imperial').json()
+        info = response['main']
+
+        self.get_animation(response['weather'][0]['main'])
+
+        self.sense.show_message('Temp: {}'.format(info['temp']))
+
+
+        
+    def get_animation(self, weather):
+        '''
+        This method gets the proper animation based on the given weather. The animation repeats 
+        four times.
+
+        @params weather:comes from api response
+        @return NONE
+        '''
+        if weather == 'Clear':
+            for x in range(0, 4):
+                self.sense.set_pixels(clear_skies)
+                sleep(0.5)
+                self.sense.set_pixels(clear_skies2)
+                sleep(0.5)
+                self.sense.set_pixels(clear_skies3)
+                sleep(0.5)
+                self.sense.set_pixels(clear_skies4)
+                sleep(0.5)
+        elif weather == 'Cloud':
+            for x in range(0,4):
+                self.sense.set_pixels(cloud)
+                sleep(0.5)
+                self.sense.set_pixels(cloud2)
+                sleep(0.5)
+                self.sense.set_pixels(cloud3)
+                sleep(0.5)
+        
+        sleep(1)
 
     def end_program(self):
         self.sense.show_message('Bye!')
