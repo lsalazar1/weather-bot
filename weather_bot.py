@@ -117,7 +117,7 @@ class WeatherBot:
     def constant_weather(self):
         while True:
             self.show_currentWeather()
-            sleep(300)
+            sleep(60)
     
     def end_program(self):
         '''
