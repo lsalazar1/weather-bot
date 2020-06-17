@@ -108,36 +108,36 @@ blizzard3 =[
 ]
 
 cloud = [
-  blk, w, w, blk, blk, blk, blk, blk,
-  w, w, w, w, blk, blk, blk, blk,
-  blk, blk, blk, blk, blk, blk, blk, blk,
-  blk, blk, w, w, blk, blk, blk, blk,
-  blk, w, w, w, w, blk, blk, blk,
-  blk, blk, blk, blk, blk, blk, blk, blk,
-  blk, w, w, blk, blk, blk, blk, blk,
-  w, w, w, w, blk, blk, blk, blk
+  bk, w, w, bk, bk, bk, bk, bk,
+  w, w, w, w, bk, bk, bk, bk,
+  bk, bk, bk, bk, bk, bk, bk, bk,
+  bk, bk, w, w, bk, bk, bk, bk,
+  bk, w, w, w, w, bk, bk, bk,
+  bk, bk, bk, bk, bk, bk, bk, bk,
+  bk, w, w, bk, bk, bk, bk, bk,
+  w, w, w, w, bk, bk, bk, bk
 ]
 
 cloud2 = [
-  blk, blk, w, w, blk, blk, blk, blk,
-  blk, w, w, w, w, blk, blk, blk,
-  blk, blk, blk, blk, blk, blk, blk, blk,
-  blk, blk, blk, blk, w, w, blk, blk,
-  blk, blk, blk, w, w, w, w, blk,
-  blk, blk, blk, blk, blk, blk, blk, blk,
-  blk, blk, w, w, blk, blk, blk, blk,
-  blk, w, w, w, w, blk, blk, blk
+  bk, bk, w, w, bk, bk, bk, bk,
+  bk, w, w, w, w, bk, bk, bk,
+  bk, bk, bk, bk, bk, bk, bk, bk,
+  bk, bk, bk, bk, w, w, bk, bk,
+  bk, bk, bk, w, w, w, w, bk,
+  bk, bk, bk, bk, bk, bk, bk, bk,
+  bk, bk, w, w, bk, bk, bk, bk,
+  bk, w, w, w, w, bk, bk, bk
 ]
 
 cloud3 = [
-  blk, blk, blk, blk, blk, w, w, blk,
-  blk, blk, blk, blk, w, w, w, w,
-  blk, blk, blk, blk, blk, blk, blk, blk,
-  blk, blk, blk, blk, blk, blk, w, w,
-  blk, blk, blk, blk, blk, w, w, w,
-  blk, blk, blk, blk, blk, blk, blk, blk,
-  blk, blk, blk, w, w, w, blk, blk,
-  blk, blk, w, w, w, w, w, blk
+  bk, bk, bk, bk, bk, w, w, bk,
+  bk, bk, bk, bk, w, w, w, w,
+  bk, bk, bk, bk, bk, bk, bk, bk,
+  bk, bk, bk, bk, bk, bk, w, w,
+  bk, bk, bk, bk, bk, w, w, w,
+  bk, bk, bk, bk, bk, bk, bk, bk,
+  bk, bk, bk, w, w, w, bk, bk,
+  bk, bk, w, w, w, w, w, bk
 ]
 
 face = [
