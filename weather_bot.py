@@ -45,13 +45,16 @@ class WeatherBot:
         response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={self.city},{self.state},{self.country}&appid={apiKey}&units=imperial').json()
         temp = int(round(response['main']['temp'], 0))
         feelsLike = int(round(response['main']['feels_like'], 0))
+        humidity = response['main']['humidity']
 
 
         self.get_animation(response['weather'][0]['main'])
 
-        self.sense.show_message(f'Temperature: {temp}')
+        self.sense.show_message(f'Temperature: {temp}F')
         sleep(1)
-        self.sense.show_message(f'Feels Like: {feelsLike}')
+        self.sense.show_message(f'Feels Like: {feelsLike}F')
+        sleep(1)
+        self.sense.show_message(f'Humidity: {humidity}%')
 
 
         
