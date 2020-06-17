@@ -19,6 +19,12 @@ class WeatherBot:
         self.city = input('Enter city (i.e Houston, Kansas City): ')
         self.state = input('Enter State Code (i.e TX): ')
         self.country = input('Enter Country Code (i.e US, UK): ')
+        self.tempUnit = upper(input('Choose f (fahrenheit) or c (celsius): '))
+
+        if self.tempUnit == 'F':
+            self.unit = 'imperial'
+        elif self.tempUnit == 'C':
+            self.unit = 'metric'
 
         self.sense.show_message(f'Hello, {self.name}!')
         self.sense.set_pixels(face)
@@ -43,7 +49,7 @@ class WeatherBot:
         '''
 
         # HTTP GET to OpenWeather, then convert response to json
-        response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={self.city},{self.state},{self.country}&appid={apiKey}&units=imperial').json()
+        response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={self.city},{self.state},{self.country}&appid={apiKey}&units={self.unit}').json()
         
         temp = int(round(response['main']['temp'], 0))
         feelsLike = int(round(response['main']['feels_like'], 0))
@@ -51,14 +57,12 @@ class WeatherBot:
 
         self.get_animation(response['weather'][0]['main'])
 
-        self.sense.show_message(f'Temperature: {temp}F')
+        self.sense.show_message(f'Temperature: {temp}{self.tempUnit}')
         sleep(1)
-        self.sense.show_message(f'Feels Like: {feelsLike}F')
+        self.sense.show_message(f'Feels Like: {feelsLike}{self.tempUnit}')
         sleep(1)
         self.sense.show_message(f'Humidity: {humidity}%')
 
-
-        
     def get_animation(self, weather):
         '''
         This method gets the proper animation based on the given weather. The animation repeats 
@@ -93,8 +97,17 @@ class WeatherBot:
                 sleep(0.5)
         
         sleep(1)
+    
+    def change_settings(self):
+
 
     def end_program(self):
+        '''
+        This method simply ends the program
+
+        @params NONE
+        @return NONE
+        '''
         self.sense.show_message('Bye!')
         exit()
 
