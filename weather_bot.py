@@ -99,7 +99,7 @@ class WeatherBot:
         sleep(1)
     
     def change_settings(self):
-
+        pass
 
     def end_program(self):
         '''
