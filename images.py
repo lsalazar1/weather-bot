@@ -8,7 +8,7 @@ bk = (0, 0, 0)
 gr = (134, 136, 138)
 
 # Lines 78-198 are RGB values for LED Matrix
-drizzle = [
+rain = [
   bk, bk, bk, bk, bk, y, y, y,
   bk, bk, w, w, w, w, y, y,
   bk, w, w, w, w, w, w, y,
@@ -19,7 +19,7 @@ drizzle = [
   g, g, g, g, g, g, g, g,
 ]
 
-drizzle2 = [
+rain2 = [
   bk, bk, bk, bk, bk, y, y, y,
   bk, bk, w, w, w, w, y, y,
   bk, w, w, w, w, w, w, y,
