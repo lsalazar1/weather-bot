@@ -1,4 +1,5 @@
 from sense_hat import SenseHat
+from datetime import datetime
 from time import sleep
 from keys import apiKey
 from images import *
@@ -43,10 +44,10 @@ class WeatherBot:
 
         # HTTP GET to OpenWeather, then convert response to json
         response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={self.city},{self.state},{self.country}&appid={apiKey}&units=imperial').json()
+        
         temp = int(round(response['main']['temp'], 0))
         feelsLike = int(round(response['main']['feels_like'], 0))
         humidity = response['main']['humidity']
-
 
         self.get_animation(response['weather'][0]['main'])
 
@@ -83,6 +84,12 @@ class WeatherBot:
                 self.sense.set_pixels(cloud2)
                 sleep(0.5)
                 self.sense.set_pixels(cloud3)
+                sleep(0.5)
+        elif weather == 'Rain':
+            for x in range(0,4):
+                self.sense.set_pixels(rain)
+                sleep(0.5)
+                self.sense.set_pixels(rain2)
                 sleep(0.5)
         
         sleep(1)
