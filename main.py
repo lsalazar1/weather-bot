@@ -14,5 +14,7 @@ if __name__ == '__main__':
             bot.end_program()
         elif event.action == 'pressed' and event.direction == 'up':
           bot.change_settings()
+        elif event.action == 'pressed' and event.direction == 'middle':
+          bot.constant_weather()
   except KeyboardInterrupt:
     bot.end_program()  

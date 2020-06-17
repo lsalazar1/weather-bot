@@ -114,6 +114,10 @@ class WeatherBot:
         elif self.tempUnit == 'C':
             self.unit = 'metric'
 
+    def constant_weather(self):
+        self.show_currentWeather()
+        sleep(300)
+    
     def end_program(self):
         '''
         This method simply ends the program
