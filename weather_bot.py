@@ -49,7 +49,7 @@ class WeatherBot:
         temp = int(round(response['main']['temp'], 0))
         desc = response['main']['description']
         feelsLike = int(round(response['main']['feels_like'], 0))
-        humidity = response['main']['humidity']
+        humidity = response['weather']['humidity']
 
         self.get_animation(response['weather'][0]['main'])
 
