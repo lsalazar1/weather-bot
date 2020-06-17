@@ -27,12 +27,12 @@ class WeatherBot:
 
         # Instructions
         self.sense.show_message('Use the joystick')
-        sleep(1)
+        sleep(0.5)
         self.sense.show_message('L - Show current weather')
-        sleep(1)
+        sleep(0.5)
         self.sense.show_message('U - Change Info')
-        sleep(1)
-        self.sense.show_message('D - Exit Program')
+        sleep(0.5)
+        self.sense.show_message('D - Exit')
     
     def show_currentWeather(self):
         '''
