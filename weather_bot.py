@@ -43,11 +43,15 @@ class WeatherBot:
 
         # HTTP GET to OpenWeather, then convert response to json
         response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={self.city},{self.state},{self.country}&appid={apiKey}&units=imperial').json()
-        info = response['main']
+        temp = int(round(response['main']['temp'], 0))
+        feelsLike = int(round(response['main']['feels_like'], 0))
+
 
         self.get_animation(response['weather'][0]['main'])
 
-        self.sense.show_message('Temp: {}'.format(info['temp']))
+        self.sense.show_message(f'Temperature: {temp}')
+        sleep(1)
+        self.sense.show_message(f'Feels Like: {feelsLike}')
 
 
         
