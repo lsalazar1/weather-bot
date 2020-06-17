@@ -12,5 +12,7 @@ if __name__ == '__main__':
             bot.show_currentWeather()
         elif event.action == 'pressed' and event.direction == 'down':
             bot.end_program()
+        elif event.action == 'pressed' and event.direction == 'up':
+          bot.change_settings()
   except KeyboardInterrupt:
     bot.end_program()  

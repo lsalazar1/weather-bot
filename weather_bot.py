@@ -30,6 +30,8 @@ class WeatherBot:
         sleep(1)
         self.sense.show_message('L - Show current weather')
         sleep(1)
+        self.sense.show_message('U - Change Info')
+        sleep(1)
         self.sense.show_message('D - Exit Program')
     
     def show_currentWeather(self):
@@ -92,7 +94,13 @@ class WeatherBot:
         sleep(1)
     
     def change_settings(self):
-        # User settings
+        '''
+        This method prompts the user to set user info. This is
+        prompted at the beginning of the program or at the main menu.
+
+        @params NONE
+        @return NONE
+        '''
         self.name = input('Enter your name: ')
         self.city = input('Enter city (i.e Houston, Kansas City): ')
         self.state = input('Enter State Code (i.e TX): ')
