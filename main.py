@@ -5,8 +5,12 @@ if __name__ == '__main__':
 
   try:
     while True:
+
+      # Captures SenseHat's joystick events
       for event in bot.sense.stick.get_events():
         if event.action == 'pressed' and event.direction == 'left':
             bot.show_currentWeather()
+        elif event.action == 'pressed' and event.direction == 'down':
+            bot.end_program()
   except KeyboardInterrupt:
     bot.end_program()  
