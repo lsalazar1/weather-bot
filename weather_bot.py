@@ -19,7 +19,7 @@ class WeatherBot:
         self.city = input('Enter city (i.e Houston, Kansas City): ')
         self.state = input('Enter State Code (i.e TX): ')
         self.country = input('Enter Country Code (i.e US, UK): ')
-        self.tempUnit = upper(input('Choose f (fahrenheit) or c (celsius): '))
+        self.tempUnit = input('Choose f (fahrenheit) or c (celsius): ').upper()
 
         if self.tempUnit == 'F':
             self.unit = 'imperial'
