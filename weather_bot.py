@@ -123,6 +123,3 @@ class WeatherBot:
         '''
         self.sense.show_message('Bye!')
         exit()
-
-
-        
