@@ -47,9 +47,9 @@ class WeatherBot:
         response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={self.city},{self.state},{self.country}&appid={apiKey}&units={self.unit}').json()
     
         temp = int(round(response['main']['temp'], 0))
-        desc = response['main']['description']
+        desc = response['weather']['description']
         feelsLike = int(round(response['main']['feels_like'], 0))
-        humidity = response['weather']['humidity']
+        humidity = response['main']['humidity']
 
         self.get_animation(response['weather'][0]['main'])
 
